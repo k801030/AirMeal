@@ -6,17 +6,8 @@
 -->
 <html>
 	<head>
-		<title>Alpha by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link href="https://a1.muscache.com/airbnb/static/packages/common_o2.1-38d1809edfde9c198cf519c1b457e1da.css" media="all" rel="stylesheet" type="text/css">
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="/libs/css/bootstrap.css" />
-		<link rel="stylesheet" href="/css/main.css" />
-
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
+   <%- include static/header.ejs %>     
+  </head>
 	<body class="landing">
 		<div id="page-wrapper">
 
@@ -62,7 +53,10 @@
 				<section id="main" class="container">
           <section class="box special form">
               <form id="searchbar-form">
-                <input class="form">
+                <div class="input-group input-group-lg">
+                  <span class="input-group-addon" id="sizing-addon1">@</span>
+                  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+                </div>
               <form id="searchbar-form" method="get" data-reactid=".3.0">
                 <div class="saved-search-wrapper searchbar__input-wrapper" data-reactid=".3.0.0">   <label class="input-placeholder-group searchbar__location" data-reactid=".3.0.0.$=10:0">
                     <span class="input-placeholder-label screen-reader-only" data-reactid=".3.0.0.$=10:0.0">您想去哪裡？</span>
