@@ -34,10 +34,9 @@
   </nav>
 </header>
 
-<%- lat %>
-<%- lng %>
-<%- date %>
-<div class="list" ng-controller="listController">
+<div class="list" ng-controller="listController" 
+ng-init="location.lat = <%- lat %>; location.lng = <%- lng %>; date = '<%- date %>' ">
+  
   <div class="meal-item col-sm-4" ng-repeat="meal in meals">
     <div class="image-view">
       <img ng-src="{{meal.photo.url}}">
@@ -50,11 +49,14 @@
         <span class="price">{{meal.price}}</span>
         剩餘數量<span class="order">{{meal.maxOrder - meal.order}}</span>
       </div>
+      <div class="distance">{{meal.dis}}</div>
     </div>
   </div>
 </div>
 
-
-  
 </body>
+
+<script>
+  
+</script>
 </html>
