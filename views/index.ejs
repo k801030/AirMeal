@@ -48,6 +48,10 @@
 					</ul>
 				</section>
 
+			<div id="map"></div>
+			<input id="lat" value="1" type="hidden" />
+			<input id="lng" value="2" type="hidden" />
+
 			<!-- Main -->
 				<section id="main" class="container">
           <section class="box special form">
@@ -60,6 +64,7 @@
                   <button type="submit" id="submit_search" class="form-control" aria-describedby="sizing-addon1">搜尋</button>
                 </div>
           </section>
+
 
 					<section class="box special">
 						<header class="major">
@@ -164,14 +169,83 @@
 
 		</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+		<%- include static/js.ejs %>
 
 	</body>
+
+<script>
+  function initAutocomplete() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -33.8688, lng: 151.2195},
+    zoom: 13,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+
+  // Create the search box and link it to the UI element.
+  var input = document.getElementById('search_location');
+  var searchBox = new google.maps.places.SearchBox(input);
+
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function() {
+    searchBox.setBounds(map.getBounds());
+  });
+
+  var markers = [];
+  // [START region_getplaces]
+  // Listen for the event fired when the user selects a prediction and retrieve
+  // more details for that place.
+  searchBox.addListener('places_changed', function() {
+    var places = searchBox.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // Clear out the old markers.
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    });
+    markers = [];
+
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
+
+      // Create a marker for each place.
+      markers.push(new google.maps.Marker({
+        map: map,
+        icon: icon,
+        title: place.name,
+        position: place.geometry.location
+      }));
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+
+    // My
+		latLng = map.getCenter();
+		document.getElementById('lat').value = latLng.lat();
+		document.getElementById('lng').value = latLng.lng();
+
+  });
+  // [END region_getplaces]
+}
+
+initAutocomplete();
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete"
+         async defer></script>
 </html>

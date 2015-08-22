@@ -7,6 +7,10 @@ a {
   color: #00B7FF;
 }
 
+#header {
+  color: #000;
+}
+
 
 /* home page  */
 
@@ -37,4 +41,29 @@ a {
 }
 #submit_search {
   width: 15%;
+}
+
+
+/* meals page */
+
+.image-view {
+  width: 100%;
+  background-color: 000;
+}
+.image-view > img {
+  max-width: 100%;
+}
+
+.info {
+  width: 100%;
+  margin: 12px;
+}
+
+.title {
+  color: 222;
+  font-size: 18px;
+}
+
+#map {
+  
 }
