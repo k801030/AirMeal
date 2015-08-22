@@ -7,8 +7,10 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET list page. */ 
-router.get('/meals', function(req, res, next) {
-  res.render('meal-list', { title: 'Air Meals' });
+router.post('/meals', function(req, res, next) {
+  console.log(req.body);
+  console.log(req.query);
+  res.render('meal-list', { title: 'Air Meals' , lat:req.body.lat ,lng:req.body.lng , date:req.body.date });
 });
 
 router.get('/detail/:id', function(req, res, next) {

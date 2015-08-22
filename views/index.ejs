@@ -49,20 +49,23 @@
 				</section>
 
 			<div id="map"></div>
-			<input id="lat" value="1" type="hidden" />
-			<input id="lng" value="2" type="hidden" />
+			
 
 			<!-- Main -->
 				<section id="main" class="container">
           <section class="box special form">
-              <form id="searchbar-form">
+          <form action="meals" method="post">
+
+              <form id="searchbar-form" action="meals" method="post">
                 <div class="input-group input-group-lg">
-                  <input type="text" id="search_location" class="form-control" placeholder="地點" aria-describedby="sizing-addon1">
-                  <input type="text" id="search_date" class="form-control" placeholder="日期" aria-describedby="sizing-addon1">
-              
-                  <input type="text" id="search_diners" class="form-control" placeholder="份數" aria-describedby="sizing-addon1">
-                  <button type="submit" id="submit_search" class="form-control" aria-describedby="sizing-addon1">搜尋</button>
+                  <input type="text" name="place" id="search_location" class="form-control" placeholder="地點" aria-describedby="sizing-addon1" />
+                  <input type="text" name="date" id="search_date" class="form-control" placeholder="日期" aria-describedby="sizing-addon1" />
+               		<input type="text" id="search_diners" class="form-control" placeholder="份數" aria-describedby="sizing-addon1" />
+                  <input id="lat" name="lat" value="1" type="hidden" />
+									<input id="lng" name="lng" value="2" type="hidden" />
+                  <input type="submit" id="submit_search" class="form-control" aria-describedby="sizing-addon1" value="搜尋" />
                 </div>
+              </form>
           </section>
 
 
@@ -133,24 +136,6 @@
 
 				</section>
 
-			<!-- CTA -->
-				<section id="cta">
-
-					<h2>Sign up for beta access</h2>
-					<p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc.</p>
-
-					<form>
-						<div class="row uniform 50%">
-							<div class="8u 12u(mobilep)">
-								<input type="email" name="email" id="email" placeholder="Email Address" />
-							</div>
-							<div class="4u 12u(mobilep)">
-								<input type="submit" value="Sign Up" class="fit" />
-							</div>
-						</div>
-					</form>
-
-				</section>
 
 			<!-- Footer -->
 				<footer id="footer">
