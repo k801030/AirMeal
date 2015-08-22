@@ -19,7 +19,9 @@ angular.module('meal-list', [])
       meals = res.data.results;
       console.log(meals);
       for (var i = 0; i< meals.length; i++) {
-          meals[i].dis = distance(meals[i].location.latitude, meals[i].location.longitude, $scope.location.lat, $scope.location.lng);
+          if (meals[i].location != null) {
+            meals[i].dis = distance(meals[i].location.latitude, meals[i].location.longitude, $scope.location.lat, $scope.location.lng);
+          }
       };
       $scope.meals = meals;
       console.log(res);
@@ -38,8 +40,7 @@ function distance(lat1,lon1,lat2,lon2) {
   Math.sin(dLon/2) * Math.sin(dLon/2);
  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
  var d = R * c;
- if (d>1) return Math.round(d)+"km";
- else if (d<=1) return Math.round(d*1000)+"m";
- return d;
+ return Math.round(d*10)/10;
+ 
 }
 

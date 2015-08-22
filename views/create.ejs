@@ -2,31 +2,225 @@
 <html>
 <head>
   <%- include static/header.ejs %> 
-  <script src="https://maps.googleapis.com/maps/api/js"></script>
 </head>
 <body>
-  <form>
-    <div class="form-group">
-      <label>Title</label>
-      <input type="email" class="form-control" name="title" placeholder="Title">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputFile">File input</label>
-      <input type="file" id="exampleInputFile">
-      <p class="help-block">Example block-level help text here.</p>
-    </div>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox"> Check me out
-      </label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
+  <div class="col-sm-offset-3 col-sm-6">
+
+    <form>
+      <div class="form-group">
+        <label class="form-title">弁当店名稱</label>
+        <label class="form-subtitle">為你的私廚弁当店取個名字吧！</label>
+        <input type="text" class="form-control" name="title" placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label class="form-title">開店時間</label>
+        <label class="form-subtitle">什麼時候會提供弁当呢？</label>
+          <div class="col-sm-12 form-group">
+            <div class="col-sm-3">星期一 </div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+          </div>
+          <div class="col-sm-12 form-group">
+            <div class="col-sm-3">星期二 </div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+          </div>
+          <div class="col-sm-12 form-group">
+            <div class="col-sm-3">星期三 </div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+          </div>
+          <div class="col-sm-12 form-group">
+            <div class="col-sm-3">星期四 </div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+          </div>
+          <div class="col-sm-12 form-group">
+            <div class="col-sm-3">星期五 </div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+          </div>
+          <div class="col-sm-12 form-group">
+            <div class="col-sm-3">星期六 </div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+          </div>
+          <div class="col-sm-12 form-group">
+            <div class="col-sm-3">星期日 </div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+            <div class="col-sm-2">早餐 <input type="checkbox" ></div>
+          </div>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-title">弁当型式</label>
+        <label class="form-subtitle">告訴大家你平常大概準備什麼好料</label>
+        <div class="form-group col-sm-12">
+        <div class="col-sm-2">
+          <label>主食</label>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+          </select>
+        </div>
+        <div class="col-sm-2">
+          <label>菜</label>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+        </div>
+        <div class="col-sm-2">
+          <label>湯</label>
+          <select>
+            <option>0</option>
+            <option>1</option>
+          </select>
+        </div>
+        <div class="col-sm-2">
+          <label>甜點</label>
+          <select>
+            <option>0</option>
+            <option>1</option>
+          </select>
+        </div>
+        <div class="col-sm-2">
+          <label>飲料</label>
+          <select>
+            <option>0</option>
+            <option>1</option>
+          </select>
+        </div>
+        <div class="col-sm-1">
+        </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        
+        <label class="form-title">擅長料理</label>
+        <label class="form-subtitle">你的私廚弁当店最常供應哪些料理呢？（0不曾～5總是）</label>
+        <div class="form-group col-sm-12">
+        <div class="col-sm-3">
+
+
+
+          <label>家鄉系列</label>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="col-sm-3">
+          <label>日韓風味</label>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="col-sm-3">
+          <label>泰越料理</label>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="col-sm-3">
+          <label>西式歐風</label>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="col-sm-3">
+          <label>悠閒輕食</label>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="col-sm-3">
+          <label>重訓餐</label>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="col-sm-3">
+          <label>素食</label>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="col-sm-offset-3">
+          <button type="submit" class="btn btn-primary">確認</button>
+          <button type="submit" class="btn btn-default">取消</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </body>
+
+<script>
+  
+$(function() {
+  $( "#search_date" ).datepicker();
+});
+</script>
+
 </html>
+
+
 
 <!-- new -->

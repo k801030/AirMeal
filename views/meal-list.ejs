@@ -37,7 +37,7 @@
 <div class="list" ng-controller="listController" 
 ng-init="location.lat = <%- lat %>; location.lng = <%- lng %>; date = '<%- date %>' ">
   
-  <div class="meal-item col-sm-4" ng-repeat="meal in meals">
+  <div class="meal-item col-sm-4" ng-repeat="meal in meals | orderBy:'dis':false">
     <div class="image-view">
       <img ng-src="{{meal.photo.url}}">
     </div>
@@ -49,7 +49,7 @@ ng-init="location.lat = <%- lat %>; location.lng = <%- lng %>; date = '<%- date 
         <span class="price">{{meal.price}}</span>
         剩餘數量<span class="order">{{meal.maxOrder - meal.order}}</span>
       </div>
-      <div class="distance">{{meal.dis}}</div>
+      <div class="distance">{{meal.dis}} km</div>
     </div>
   </div>
 </div>
