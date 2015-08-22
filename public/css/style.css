@@ -6,3 +6,35 @@ body {
 a {
   color: #00B7FF;
 }
+
+
+/* home page  */
+
+.input-group  > .form-control {
+  display: inline;
+}
+
+.input-group  > .form-control:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group  > .form-control:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#search_location {
+  width: 40%;
+}
+
+#search_date {
+  width: 15%;
+}
+
+#search_diners {
+  width: 15%;
+}
+#submit_search {
+  width: 15%;
+}
