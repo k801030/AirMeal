@@ -22,4 +22,8 @@ router.get('/create', function(req, res, next) {
   res.render('create', { title: 'Air Meals' });
 });
 
+router.get('/login', function(req, res, next) {
+  res.render('login', { title: 'Air Meals' });
+});
+
 module.exports = router;
