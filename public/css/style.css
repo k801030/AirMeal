@@ -7,9 +7,16 @@ a {
   color: #e16a33;
 }
 
+a {
+  text-decoration: none;
+  border: none;
+}
+
 #header {
   color: #777;
 }
+
+
 
 
 /* home page  */
