@@ -5,56 +5,152 @@
   <script src="https://maps.googleapis.com/maps/api/js"></script>
   <script src="js/meal-list.js"></script>    
 </head>
-<body ng-app="meal-list">
-<!-- Header -->
-<header id="header" class="alt">
-  <h1><a href="index.html">Alpha</a> by HTML5 UP</h1>
-  <nav id="nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li>
-        <a href="#" class="icon fa-angle-down">Layouts</a>
-        <ul>
-          <li><a href="generic.html">Generic</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="elements.html">Elements</a></li>
-          <li>
-            <a href="#">Submenu</a>
-            <ul>
-              <li><a href="#">Option One</a></li>
-              <li><a href="#">Option Two</a></li>
-              <li><a href="#">Option Three</a></li>
-              <li><a href="#">Option Four</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#" class="button">Sign Up</a></li>
-    </ul>
-  </nav>
-</header>
+<body class="landing" ng-app="meal-list">
 
+    <div id="page-wrapper">
+<!-- Header -->    
+    <header id="header" class="alt">
+        <img src="img/bentogo-01.png" width="210px" style="padding:23px 0 0 45px">
+           <nav>
+                            <ul>
+                                <li>
+                                    <a href="#">宗旨</a></li>
+
+                                <li>
+                                    <a href="#">流程</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">註冊</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">登入</a>
+                                </li>
+                               
+                                <li>
+                                    <a href="#">幫助</a>
+                                </li>
+                                  <li>
+                                    <a href="offer.html" style="border: #21AB38 1px solid; color:#21AB38">成為私廚</a>
+                                </li>
+                           
+                                      <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                      <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                
+                            </ul>
+                        </nav><!-- /.nav-collapse -->
+                 
+
+        </header>
+
+   
+    <section class="box special form">
+          <form action="meals" method="post">
+                <div class="input-group input-group-lg col-sm-12  text-center-md">
+                <div class="col-sm-3">
+                     <select name="type" id="search_type"  class="form-control" placeholder="類型" aria-describedby="sizing-addon1">
+                   <option value="0">類型</option>
+                   <option value="1">家鄉系列</option>
+                    <option value="2">日韓風味</option>
+                    <option value="3">泰越料理</option>
+                   <option value="4">西式歐風</option>
+                   <option value="5">重訓餐</option>
+           <option value="6">悠閒輕食</option>
+                   <option value="7">甜點</option>
+                   <option value="8">素食</option>
+                   <option value="9">其他</option>
+                  </select>
+                </div>
+                <div class="col-sm-3">
+                    <select name="type" id="search_maxOrder"  class="form-control" placeholder="剩餘數量" aria-describedby="sizing-addon1">
+                   <option value="0">剩餘數量</option>
+                         <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                   <option value="4">4</option>
+                   <option value="5">5</option>
+           <option value="6">5+</option></select>
+                  </div>
+                <div class="col-sm-3">
+                   
+                    <select name="type" id="search_rate"  class="form-control" placeholder="評分" aria-describedby="sizing-addon1">
+                    <option value="0">評分</option>
+                        <option value="1">5</option>
+                    <option value="2">4</option>
+                    <option value="3">3</option>
+                   <option value="4">3-</option>
+                  </select>
+                </div>
+                <div class="col-sm-3">  
+                    
+                    <select name="type" id="search_price"  class="form-control" placeholder="價格" aria-describedby="sizing-addon1">
+                  <option value="0">價格</option>
+                        <option value="1">由高至低</option>
+                    <option value="2">由低至高</option>
+                    
+                  </select>
+                </div>
+                  </div>
+            
+                
+              </form>
+        
+        
+        
+                
+        
+          </section>
+
+    
+
+                    
+    
+    
+    
 <div class="list" ng-controller="listController" 
-ng-init="location.lat = <%- lat %>; location.lng = <%- lng %>; date = '<%- date %>' ">
+ng-init="location.lat = 1; location.lng = 2; date = 'Sun Aug 23 2015 02:43:05 GMT+0800 (CST)' ">
   
-  <div class="meal-item col-sm-4" ng-repeat="meal in meals | orderBy:'dis':false">
-    <div class="image-view">
-      <img ng-src="{{meal.photo.url}}">
+  <div class="meal-item col-md-4 wp2" ng-repeat="meal in meals | orderBy:'dis':false">
+       
+      <div class="image-view">
+          <a href="#"><img ng-src="{{meal.photo.url}}"></a>
     </div>
     <div class="info">
-      <div class="title">{{meal.name}}</div>
+      <div class="title" style="color:#000">{{meal.name}}</div>
       <div>
-        <span class="type">{{meal.type}}</span>．
-        <span class="rate">{{meal.rate}}</span>．
-        <span class="price">{{meal.price}}</span>
-        剩餘數量<span class="order">{{meal.maxOrder - meal.order}}</span>
+        <span class="type">{{meal.type}}</span>
+        <br/><span class="rate">{{meal.rate}}<img src="img/ratingstar-01.png"/><img src="img/ratingstar-03.png"/></span>
+       <br/> <span class="price">{{meal.price}}</span>
+        <br/>剩餘數量<span class="order">{{meal.maxOrder - meal.order}}</span>
       </div>
-      <div class="distance">{{meal.dis}} km</div>
+      <div class="distance">{{meal.dis}} 公里</div>
     </div>
+        
   </div>
 </div>
-
+      
+        
+        
+        
+         
+            
+            
+          
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+        
 </body>
+
+
 
 <script>
   
