@@ -20,6 +20,10 @@ input.form-control {
   padding: 10px;
 }
 
+select {
+  text-indent: 7px;
+}
+
 
 
 
