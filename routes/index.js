@@ -26,4 +26,7 @@ router.get('/login',  function(req, res, next) {
     res.render('login', { title: 'Bentogo' });
 });
 
+
+
+
 module.exports = router;

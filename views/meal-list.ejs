@@ -1,48 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%- include static/header.ejs %> 
+  <%- include static/head.ejs %> 
   <script src="https://maps.googleapis.com/maps/api/js"></script>
   <script src="js/meal-list.js"></script>    
 </head>
 <body class="landing" ng-app="meal-list" ng-controller="listController" >
 
     <div id="page-wrapper">
-<!-- Header -->    
-    <header id="header" class="alt" >
-        <a href="/"><img src="img/bentogo-01.png" width="210px" style="padding:23px 0 0 45px"></a>
-           <nav>
-                            <ul>
-                                <li>
-                                    <a href="#">宗旨</a></li>
-
-                                <li>
-                                    <a href="#">流程</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">註冊</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">登入</a>
-                                </li>
-                               
-                                <li>
-                                    <a href="#">幫助</a>
-                                </li>
-                                  <li>
-                                    <a href="/create" style="border: #21AB38 1px solid; color:#21AB38">成為私廚</a>
-                                </li>
-                           
-                                      <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
-                                      <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
-                                
-                            </ul>
-                        </nav><!-- /.nav-collapse -->
-                 
-
-        </header>
+      <%- include static/header.ejs %>
 
    
     <section class="box special form">
