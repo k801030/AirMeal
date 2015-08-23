@@ -2083,7 +2083,6 @@
 		padding: 0.75em 1em;
 	}
 
-
 	input[type="radio"] + label:before {
 		border-radius: 100%;
 	}
@@ -3724,7 +3723,7 @@
 }
 
 .rate img{
-    height:20px;
+    height:14px;
 padding-left: 1px;}
 
 .image-view{
@@ -3745,4 +3744,37 @@ opacity:1.0;
     text-align: center;
 color:#777}
     
+.profile{
+margin-top:50px;
+margin-left: 50px;}
 
+.word{
+margin-top:50px;
+margin-left:50px;}
+
+.pay{
+margin-top:50px;}
+
+
+.hih img{
+width:230px;
+padding-left:20px;}
+
+.profile h4{
+    color:#21AB38;
+font-weight: 200;} 
+
+.word h4{
+    color:#21AB38;
+font-weight: 200;}
+
+.word p img{
+    width:20px;}
+
+.pay h4{
+    color:#21AB38;
+font-weight: 200;}
+
+.pay h5{
+    color:#E16A33;
+font-weight: 300;}

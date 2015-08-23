@@ -1,10 +1,111 @@
+<!DOCTYPE HTML>
 <!DOCTYPE html>
 <html>
 <head>
-  <%- include static/header.ejs %> 
-  <script src="https://maps.googleapis.com/maps/api/js"></script>
+    
+    <%- include static/head.ejs %> 
 </head>
-<body>
 
-</body>
+    <body class="landing" ng-app="meal-list">
+
+    <div id="page-wrapper">
+<%- include static/header.ejs %>
+   
+       
+            
+      <div class="col-sm-12">      
+            
+    <div class="profile col-sm-4">
+            
+        <div class="hih"><img src="/img/profileround.png"/></div>
+        
+            <h2 style="padding-top:20px">范家小館
+        <a href="#"> <i class="fa fa-facebook"></i> </a></li>
+        <a href="#"> <i class="fa fa-twitter"></i> </a></li></h2>
+               <input type="submit" id="submit_search" class="form-control" aria-describedby="sizing-addon1" value="追蹤"/ style="background:#21AB38">
+        
+        <h4>料理故事</h4>
+                <p style="color:#777">范家小館午晚餐均採用新鮮蔬果漁貨來料理，餐點都由廚房現點現做，希望提供顧客最即時的美味。女主人庭甄精心挑選的當季食材，希望給客人有別以往的家常饗宴。而所有的海鮮料理，為了確保品質與鮮美，庭甄都會請丈夫宗緯親自至凌晨的漁貨市場採買，只有親手嚴選，才能放心！
+<br/>除了提供午晚餐，范家小館也備有美味的下午茶點。下午茶點是主打和洋混搭的創意點心，包含季節限定各式和菓子，以及范式專屬特調飲品，帶來絕對可口的好滋味，快來享受一場微風徐徐、古意盎然的午宴吧！
+</p>
+        
+    </div>
+       <div class="word col-sm-3">
+                <h4>開店時間</h4>
+<p>星期四、星期五</p>
+                <h4>弁当型式</h4>
+<p>1主食、2菜、 0湯、1甜點、0飲料</p>
+<h4>擅長料理</h4>
+<p>家鄉系列 <img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/></p>
+<p>日韓風味 <img src="/img/ratingstar-01.png"/></p>
+<p>泰越料理 <img src="/img/ratingstar-01.png"/></p>
+<p>西式歐風 <img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/></p>
+<p>重訓餐 <img src="/img/ratingstar-01.png"/></p>
+<p>悠閒輕食 <img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/></p>
+<p>甜點 <img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/></p> 
+<p>素食 <img src="/img/ratingstar-01.png"/></p>
+
+
+               
+
+                <h4>評分</h4>
+                <p>美味可口 <img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/></p>
+                <p>菜色多元 <img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/></p> 
+                <p>食材新鮮 <img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/></p>
+                <p>健康安心 <img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/><img src="/img/ratingstar-01.png"/></p>
+</div> 
+           
+
+    
+    <div class="pay col-sm-2">
+     <h4>價格</h4>
+                <p>120元</p>
+                
+                <h4>好食方式</h4>
+                <p>自取、外送</p>
+        <h4>結帳欄</h4>
+<h5>日期 8月23日</h5>
+   <h5> 時間 晚餐</h5>
+ <h5>   數量 2 份</h5>
+<h5>價格 240 元</h5>
+<h5>小費 2%
+    <h4> 總額 245 元 </h4>
+     
+    <input type="submit" class="form-control" aria-describedby="sizing-addon1" value="TO GO"/ style="background:#E16A33" width="20px" padding-top="20px">
+            
+            </div>
+        
+        
+        
+        </div>    
+            
+   
+
+      
+  
+    <script src="/libs/js/jquery.min.js"></script>
+<script src="/libs/js/jquery.dropotron.min.js"></script>
+<script src="/libs/js/jquery.scrollgress.min.js"></script>
+<script src="/libs/js/skel.min.js"></script>
+<script src="/libs/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/libs/js/main.js"></script>
+
+
+<!--[if lt IE 9]>
+  <script src="https://a1.muscache.com/airbnb/static/packages/libs_jquery_1x-363b31643ea07bb94eeb214867db9a2e.js" type="text/javascript"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+  <script src="https://a0.muscache.com/airbnb/static/packages/libs_jquery_2x-08f99e875b23509b3a879d6103fa298c.js" type="text/javascript"></script>
+<!--<![endif]-->
+
+  </body>
+
+
+
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete"
+         async defer></script>
+
 </html>

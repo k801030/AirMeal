@@ -67,9 +67,9 @@
     
 <div class="list" 
 ng-init="location.lat = <%- lat %>; location.lng = <%- lng %>; date = '<%- date %>' ">
-  <div class="meal-item col-md-4 wp2" ng-repeat="meal in meals | orderBy:'dis':false | filter:search" ng-show="(!(maxOrder<10 && maxOrder>0)  || meal.maxOrder >= maxOrder)  && (!(rate>0) || meal.rate >= rate)">
+  <div class="meal-item col-md-4 wp2" ng-repeat="meal in meals | orderBy:'dis':false | filter:search" ng-show="(!(maxOrder<10 && maxOrder>0)  || meal.maxOrder >= maxOrder)  && (!(rate>0) || meal.rate >= rate)" >
       <div class="image-view">
-          <a href="#"><img ng-src="{{meal.photo.url}}"></a>
+          <a href="/person/34551"><img ng-src="{{meal.photo.url}}"></a>
     </div>
     <div class="info">
       <div class="title" style="color:#000">{{meal.name}}</div>
@@ -88,7 +88,7 @@ ng-init="location.lat = <%- lat %>; location.lng = <%- lng %>; date = '<%- date 
       </div>
       <div class="distance">{{meal.dis}} 公里</div>
     </div>
-        
+  </a>        
   </div>
 </div>
       

@@ -12,8 +12,8 @@ router.post('/meals', function(req, res, next) {
 });
 
 
-router.get('/detail/:id', function(req, res, next) {
-  res.render('detail', { titule: 'Bentogo' });
+router.get('/person/:id', function(req, res, next) {
+  res.render('detail', { title: 'Bentogo' });
 });
 
 
