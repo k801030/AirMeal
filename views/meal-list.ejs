@@ -100,7 +100,7 @@
     
     
 <div class="list" 
-ng-init="location.lat = 1; location.lng = 2; date = 'Sun Aug 23 2015 02:43:05 GMT+0800 (CST)' ">
+ng-init="location.lat = <%- lat %>; location.lng = <%- lng %>; date = '<%- date %>' ">
   <div class="meal-item col-md-4 wp2" ng-repeat="meal in meals | orderBy:'dis':false | filter:search" ng-show="(!(maxOrder<10 && maxOrder>0)  || meal.maxOrder >= maxOrder)  && (!(rate>0) || meal.rate >= rate)">
       <div class="image-view">
           <a href="#"><img ng-src="{{meal.photo.url}}"></a>
