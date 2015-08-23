@@ -5,11 +5,11 @@
   <script src="https://maps.googleapis.com/maps/api/js"></script>
   <script src="js/meal-list.js"></script>    
 </head>
-<body class="landing" ng-app="meal-list">
+<body class="landing" ng-app="meal-list" ng-controller="listController" >
 
     <div id="page-wrapper">
 <!-- Header -->    
-    <header id="header" class="alt">
+    <header id="header" class="alt" >
         <img src="img/bentogo-01.png" width="210px" style="padding:23px 0 0 45px">
            <nav>
                             <ul>
@@ -49,28 +49,29 @@
           <form action="meals" method="post">
                 <div class="input-group input-group-lg col-sm-12  text-center-md">
                 <div class="col-sm-3">
-                     <select name="type" id="search_type"  class="form-control" placeholder="類型" aria-describedby="sizing-addon1">
-                   <option value="0">類型</option>
-                   <option value="1">家鄉系列</option>
-                    <option value="2">日韓風味</option>
-                    <option value="3">泰越料理</option>
-                   <option value="4">西式歐風</option>
-                   <option value="5">重訓餐</option>
-           <option value="6">悠閒輕食</option>
+                     <select name="type" id="search_type"  class="form-control" placeholder="類型" aria-describedby="sizing-addon1" ng-model="search.type">
+                   <option value="">類型</option>
+                   <option value="家鄉風味">家鄉風味</option>
+                    <option value="日韓風味">日韓風味</option>
+                    <option value="泰越料理">泰越料理</option>
+                   <option value="西式歐風">西式歐風</option>
+                   <option value="重訓餐">重訓餐</option>
+                   <option value="悠閒輕食">悠閒輕食</option>
                    <option value="7">甜點</option>
                    <option value="8">素食</option>
                    <option value="9">其他</option>
                   </select>
                 </div>
                 <div class="col-sm-3">
-                    <select name="type" id="search_maxOrder"  class="form-control" placeholder="剩餘數量" aria-describedby="sizing-addon1">
-                   <option value="0">剩餘數量</option>
-                         <option value="1">1</option>
+
+                    <select name="type" id="search_maxOrder"  class="form-control" placeholder="剩餘數量" aria-describedby="sizing-addon1" ng-model="maxOrder">
+                    <option value="">剩餘數量</option>
+                    <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                    <option value="4">4</option>
                    <option value="5">5</option>
-           <option value="6">5+</option></select>
+                  <option value="6">5+</option></select>
                   </div>
                 <div class="col-sm-3">
                    
@@ -108,11 +109,9 @@
     
     
     
-<div class="list" ng-controller="listController" 
+<div class="list" 
 ng-init="location.lat = 1; location.lng = 2; date = 'Sun Aug 23 2015 02:43:05 GMT+0800 (CST)' ">
-  
-  <div class="meal-item col-md-4 wp2" ng-repeat="meal in meals | orderBy:'dis':false">
-       
+  <div class="meal-item col-md-4 wp2" ng-repeat="meal in meals | orderBy:'dis':false | filter:search" ng-show="!(maxOrder<10 && maxOrder>0)  || meal.maxOrder >= maxOrder ">
       <div class="image-view">
           <a href="#"><img ng-src="{{meal.photo.url}}"></a>
     </div>
@@ -120,9 +119,16 @@ ng-init="location.lat = 1; location.lng = 2; date = 'Sun Aug 23 2015 02:43:05 GM
       <div class="title" style="color:#000">{{meal.name}}</div>
       <div>
         <span class="type">{{meal.type}}</span>
-        <br/><span class="rate">{{meal.rate}}<img src="img/ratingstar-01.png"/><img src="img/ratingstar-03.png"/></span>
-       <br/> <span class="price">{{meal.price}}</span>
-        <br/>剩餘數量<span class="order">{{meal.maxOrder - meal.order}}</span>
+        <br/>
+        <span class="rate" ng-repeat="n in [] | range:meal.rate">
+          <img src="img/ratingstar-01.png"/>
+        </span>
+        <span class="rate" ng-repeat="n in [] | range:5.9-meal.rate">
+          <img src="img/ratingstar-02.png"/>
+        </span>
+        
+       <br/> <span class="price">$ {{meal.price}}</span>
+        <br/><span class="order">{{meal.maxOrder - meal.order}} 份</span>
       </div>
       <div class="distance">{{meal.dis}} 公里</div>
     </div>

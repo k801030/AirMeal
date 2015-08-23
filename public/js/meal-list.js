@@ -1,9 +1,26 @@
 angular.module('meal-list', [])
 
+.filter('range', function() {
+  return function(input, total) {
+    total = parseInt(total);
+    for (var i=0; i<total; i++)
+      input.push(i);
+    return input;
+  }
+})
+
 
 .controller('listController', ['$scope', '$http', function($scope, $http) {
     $scope.meals;
     $scope.distances;
+    $scope.greaterThan = function(prop, val){
+      return function(item){
+        console.log(prop);
+        console.log(val);
+        return item[prop] > val;
+      }
+    }
+
 
     var req = {
      method: 'GET',
@@ -19,6 +36,7 @@ angular.module('meal-list', [])
       meals = res.data.results;
       console.log(meals);
       for (var i = 0; i< meals.length; i++) {
+          // location
           if (meals[i].location != null) {
             meals[i].dis = distance(meals[i].location.latitude, meals[i].location.longitude, $scope.location.lat, $scope.location.lng);
           }
